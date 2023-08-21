@@ -1,17 +1,77 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class iPhone {
-    public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import model.*;
+import service.*;
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+import java.util.ArrayList;
+import java.util.List;
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+public class iPhone implements Navegador, ReprodutorMusical, Telefone {
+    List<Contato> contatos = new ArrayList<>();
+    List<Musica> playlist = new ArrayList<>();
+
+    @Override
+    public void exibirPagina() {
+        System.out.println("Exibindo página de Internet.");
+    }
+
+    @Override
+    public void adicionarNovaAba() {
+        System.out.println("Adicionando nova aba no navegador.");
+    }
+
+    @Override
+    public void atualizarPagina() {
+        System.out.println("Atualizando página.");
+        System.out.println("Página atualizada.");
+    }
+
+    @Override
+    public void tocar(Musica musica) {
+        System.out.println("Tocando " + musica.getNome());
+
+    }
+
+    @Override
+    public void pausar() {
+        System.out.println("Musica pausada!");
+
+    }
+
+    @Override
+    public void selecionarMusica(Musica musica) {
+        System.out.printf("%s selecionada. \n", musica.getNome());
+
+    }
+
+    @Override
+    public void adicionarMusica(Musica musica) {
+        this.playlist.add(musica);
+        System.out.println("Música adicionada!");
+    }
+
+    @Override
+    public void ligar(Contato contato) {
+        System.out.println("Ligando para " + contato.getNome());
+
+    }
+
+    @Override
+    public void atender() {
+        System.out.println("Atendendo chamada");
+
+    }
+
+    @Override
+    public void iniciarCorreioDeVoz() {
+        System.out.println("Iniciando correio de voz");
+    }
+
+    @Override
+    public void adicionarContato(Contato contato) {
+        this.contatos.add(contato);
+        System.out.println("Contato adicionado");
+    }
+
+    public List<Contato> getContatos() {
+        return contatos;
     }
 }

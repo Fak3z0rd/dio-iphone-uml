@@ -10,4 +10,16 @@ public class Musica {
         this.artista = artista;
         this.album = album;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getArtista() {
+        return artista;
+    }
+
+    public String getAlbum() {
+        return album;
+    }
 }
